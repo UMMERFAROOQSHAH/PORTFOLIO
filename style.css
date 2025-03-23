@@ -1,0 +1,317 @@
+/* General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #12372A;
+    color: white;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background-color: #0F2921;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li {
+    display: inline;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    height: 80vh;
+    background: linear-gradient(135deg, #0F2921 50%, #FFC436 50%);
+    position: relative;
+    overflow: hidden; 
+}
+/* Hero Content */
+.hero-content {
+    max-width: 50%;
+}
+.hero h1 {
+    font-size: 44px;
+    margin: 20px 0;
+    font-weight: bold; 
+    color: white; 
+    animation: fadeInUp 2s ease-in-out infinite alternate; 
+}
+.hero h1 span {
+    color: #FFC436;
+}
+.hero p {
+    font-size: 18px;
+    margin: 20px 0;
+    font-weight: bolder; 
+    color: white; 
+    animation: fadeInUp 2s ease-in-out infinite alternate; 
+}
+/* Keyframes for continuous animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0.6;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.buttons {
+    margin-top: 20px;
+}
+.btn {
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.primary {
+    background-color: #0F2921;
+    color: black;
+    border: 1px solid white;
+    margin-right: 10px;
+}
+.secondary {
+    background-color: #0F2921;
+    color: black;
+    margin-right: 10px;
+    border: 1px solid white;
+}
+/* Hero Image */
+.hero-image img {
+    width: 300px; 
+    height: 300px;
+    border-radius: 50%; 
+    border: 6px solid darkred;
+    object-fit: cover;
+    object-position: top; 
+    transform: translateY(-30px); 
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #022c43;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+/* Sections */
+section {
+    padding: 50px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+/* Certificate Box Styling */
+.certificate-box {
+    background: #c6a24e; 
+    color: white;
+    padding: 50px; 
+    border-radius: 20px;
+    width: 70%; 
+    margin: auto;
+    border: 6px solid #00bcd4; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+/* Certificates Styling */
+.certificates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Certificate Rows */
+.certificate-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+/* Individual Certificate Styling */
+.certificate {
+    width: 45%;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 18px;
+    background-color: #f8f9fa;
+    border: 4px solid #007bff; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+/* Hover Effect for Certificate Box */
+.certificate-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+/* Hover Effect for Individual Certificates */
+.certificate:hover {
+    transform: scale(1.1);
+}
+/* Image Styling */
+.certificate img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .certificate-box {
+        width: 90%;
+    }
+
+    .certificate-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .certificate {
+        width: 90%;
+    }
+}
+/* Common Styling for About & Contact Sections */
+.info-box {
+    background: #c6a24e; 
+    color: white;
+    padding: 40px; 
+    border-radius: 15px;
+    width: 60%; 
+    margin: auto;
+    border: 5px solid #00bcd4; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background 0.3s ease-in-out;
+}
+/* Hover Animation */
+.info-box:hover {
+    transform: scale(1.05); /* Slight enlargement */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    background: #00bcd4; /* Cyan hover effect */
+    color: black; /* Text changes on hover */
+}
+.info-box:hover a {
+    color: black; 
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-box, .contact-box {
+        width: 90%; 
+        padding: 30px;
+    }
+}
+/* Back to Home Button Box */
+.home-box {
+    background: #222; 
+    color: white;
+    padding: 15px 30px; 
+    border-radius: 10px;
+    width: fit-content; 
+    margin: 30px auto 0; 
+    border: 4px solid #00bcd4; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+/* Back to Home Link Styling */
+.home-box a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+}
+/* Hover Effect */
+.home-box:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    background: #00bcd4; 
+}
+.home-box:hover a {
+    color: black; 
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-box {
+        width: 80%; 
+        padding: 12px 25px;
+    }
+}
+/* Headings */
+h1, h2 {
+    color: #fdb827;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/* Links */
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ff6f61;
+    transition: color 0.3s ease-in-out;
+}
+a:hover {
+    color: #ffcc29;
+    text-decoration: underline;
+}
+/* Buttons */
+button, .back-home {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+button:hover, .back-home:hover {
+    background-color: #951047;
+    color: black;
+}
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+/* Adding animation effect to sections */
+section:hover {
+    animation: pulse 3s infinite;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+}
