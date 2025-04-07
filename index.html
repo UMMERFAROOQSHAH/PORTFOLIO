@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMMER FAROOQ SHAH</title>
+    <link rel="stylesheet" href="stylep.css">
+</head>
+<body>
+<!-- Audio Element -->
+
+<audio id="nasheed-audio">
+    <source src="ALLAH-YALAM.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<section id="nasheed">
+    <div class="info-box">
+    </div>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("nasheed-audio");
+        const nasheedLink = document.getElementById("ALLAH-YALAM.mp3");
+
+        nasheedLink.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default link behavior
+
+            // Scroll to Nasheed section smoothly
+            document.querySelector("#nasheed").scrollIntoView({ behavior: "smooth" });
+
+            // Play/Pause the audio
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+    });
+</script>
+
+
+
+<!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">UMMER FAROOQ SHAH</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contacts</a></li>
+            <li><a href="#nasheed" id="ALLAH-YALAM.mp3">Nasheed</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#" id="queryNav">Query</a></li>
+
+        </ul>
+    </nav>
+
+
+   
+
+     
+<!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hello, my name is <span>UMMER FAROOQ SHAH</span></h1>
+            <p>CURRENTLY I EM DOING MSC IN INFORMATION TECHNOLOGY FROM CLUSTER UNIVERSITY SRINAGAR, I EM PASSIONATE ABOUT DATA SCIENCE (ANALYTICS)</p>
+            <div class="buttons">
+                <a href="https://github.com/UMMERFAROOQSHAH" class="btn primary">GIT-HUB</a>
+                <a href="tel:+917006760858" class="btn secondary">BOOK A CALL</a>
+                <a href="resume.jpeg" class="btn tertiary" target="_blank">RESUME</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="WhatsApp Image 2025-03-20 at 22.11.33_c8191a06.jpg" alt="Profile Image">
+        </div>
+    </section>
+    <!-- DATE AND TIME-->
+    <div id="datetime-container">
+        <div id="calendar-box">
+          📅 <span id="current-date">Loading date...</span>
+        </div>
+        <div id="clock-box">
+          ⏰ <span id="current-time">Loading time...</span>
+        </div>
+      </div>
+      <script>
+        function updateDateTime() {
+          const now = new Date();
+          const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+          const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+      
+          document.getElementById('current-date').textContent = now.toLocaleDateString(undefined, dateOptions);
+          document.getElementById('current-time').textContent = now.toLocaleTimeString(undefined, timeOptions);
+        }
+      
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+      </script>
+      
+      
+      
+        
+<!-- MOVING BOX-->
+<div class="moving-text-container">
+    <span id="movingText"></span>
+</div>
+<script>
+        const text = " UMMER FAROOQ SHAH-IT-STUDENT,PASSIONATE DATA ANALYST,HTML, CSS, JS, PYTHON, POWERBI, MYSQL, EXCEL, TABLEAU,MASTER'S IN INFORMATION TECHNOLOGY, SLOWLY LEARNING-CODING, DATA ANALYTICS, CRICKET"
+        let index = 0;
+        const movingText = document.getElementById("movingText");
+        
+        function typeText() {
+            if (index < text.length) {
+                movingText.innerHTML += text[index];
+                index++;
+                setTimeout(typeText, 150); // Controls letter delay
+            } else {
+                animateText();
+            }
+        }
+        
+        function animateText() {
+            movingText.style.position = "absolute";
+            let startPosition = window.innerWidth;
+            movingText.style.left = startPosition + "px";
+    
+            function move() {
+                startPosition -= 2; // Speed of movement
+                movingText.style.left = startPosition + "px";
+                if (startPosition > -movingText.offsetWidth) {
+                    requestAnimationFrame(move);
+                } else {
+                    movingText.innerHTML = "";
+                    index = 0;
+                    typeText();
+                }
+            }
+            move();
+        }
+    
+        typeText();
+    </script>
+<!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        
+        <div class="about-container">
+<!-- Personal Details -->
+            <div class="about-item">
+                <div class="image-box">
+                    <img src="PERSONAL.png" alt="Personal Details">
+                </div>
+                <p><a href="#" id="toggle-details">Personal Details</a></p>
+        </div>
+        <div id="personal-details" class="hidden-section">
+                <h3 class="animated-text">Personal Details:-</h3>
+                <p class="animated-text"><strong>Name:</strong> UMMER FAROOQ SHAH</p>
+                <p class="animated-text"><strong>S/O:</strong> FAROOQ AHMAD SHAH</p>
+                <p class="animated-text"><strong>R/O:</strong> NARANOWPORA WAHIBUGH PULWAMA</p>
+        </div>
+        <script>
+            document.getElementById("toggle-details").addEventListener("click", function(event) {
+                event.preventDefault();
+                const detailsSection = document.getElementById("personal-details");
+        
+                if (detailsSection.style.display === "none" || detailsSection.style.display === "") {
+                    // Show the section without scrolling
+                    detailsSection.style.display = "block";
+                    setTimeout(() => detailsSection.style.opacity = "1", 50);
+        
+                    // Change link text to "Hide Personal Details"
+                    this.textContent = "Hide Personal Details";
+                } else {
+                    // Hide the section
+                    detailsSection.style.opacity = "0";
+                    setTimeout(() => detailsSection.style.display = "none", 500); // Delay hiding for smooth fade-out
+        
+                    // Change link text back to "Personal Details"
+                    this.textContent = "Personal Details";
+                }
+            });
+        </script>
+<!-- Qualification -->
+<div class="about-item">
+    <div class="image-box">
+        <img src="QUALIFICATION.png" alt="Qualification">
+    </div>
+    <p><a href="#" id="toggle1-details">Qualification</a></p>
+</div>
+<div id="Qualification" class="hidden-section">
+    <h3 class="animated-text">Qualification:-</h3>
+    <p class="animated-text"><strong>Bachelor's:</strong>BSC-INFORMATION TECHNOLOGY </p>
+    <p class="animated-text"><strong>Master's</strong> MSC-INFORMATION TECHNOLOGY</p>
+</div>
+<script>
+document.getElementById("toggle1-details").addEventListener("click", function(event) {
+    event.preventDefault();
+    const detailsSection = document.getElementById("Qualification");
+
+    if (detailsSection.style.display === "none" || detailsSection.style.display === "") {
+        // Show the section without scrolling
+        detailsSection.style.display = "block";
+        setTimeout(() => detailsSection.style.opacity = "1", 50);
+
+        // Change link text to "Hide Personal Details"
+        this.textContent = "Hide Qualification Details";
+    } else {
+        // Hide the section
+        detailsSection.style.opacity = "0";
+        setTimeout(() => detailsSection.style.display = "none", 500); // Delay hiding for smooth fade-out
+
+        // Change link text back to "Personal Details"
+        this.textContent = "Qualification";
+    }
+});
+</script>
+<!-- Skills -->
+            <div class="about-item">
+                <div class="image-box">
+                    <img src="SKILLS.png" alt="Skills">
+                </div>
+                <p><a href="#" id="toggle2-details">Skills</a></p>
+            </div>
+            <div id="Skills" class="hidden-section">
+                <h3 class="animated-text">Skills:-</h3>
+                <p class="animated-text"><strong>1:</strong>PYTHON</p>
+                <p class="animated-text"><strong>2:</strong> POWER-BI</p>
+                <p class="animated-text"><strong>3:</strong> TABELEAU</p>
+                <p class="animated-text"><strong>4:</strong> MS-EXCEL</p>
+                <p class="animated-text"><strong>5:</strong> MS-WORD</p>
+                <p class="animated-text"><strong>6:</strong> PPT</p>
+                <p class="animated-text"><strong>7:</strong> MYSQL</p>
+                <p class="animated-text"><strong>8:</strong> VSCODE</p>
+                <p class="animated-text"><strong>9:</strong> DATA-ANALYTICS</p>
+                <p class="animated-text"><strong>10:</strong> HTML</p>
+                <p class="animated-text"><strong>11:</strong> CSS</p>
+                <p class="animated-text"><strong>12:</strong> JAVA-SCRIPT</p>
+
+
+            </div>
+            <script>
+            document.getElementById("toggle2-details").addEventListener("click", function(event) {
+                event.preventDefault();
+                const detailsSection = document.getElementById("Skills");
+            
+                if (detailsSection.style.display === "none" || detailsSection.style.display === "") {
+                    // Show the section without scrolling
+                    detailsSection.style.display = "block";
+                    setTimeout(() => detailsSection.style.opacity = "1", 50);
+            
+                    // Change link text to "Hide Personal Details"
+                    this.textContent = "Hide Skills";
+                } else {
+                    // Hide the section
+                    detailsSection.style.opacity = "0";
+                    setTimeout(() => detailsSection.style.display = "none", 500); // Delay hiding for smooth fade-out
+            
+                    // Change link text back to "Personal Details"
+                    this.textContent = "Skills";
+                }
+            });
+            </script>
+<!-- Hobby -->
+            <div class="about-item">
+                <div class="image-box">
+                    <img src="HOBBY.jpg" alt="Hobby">
+                </div>
+                <p><a href="#" id="toggle3-details">Hobby</a></p>
+            </div>
+            <div id="Hobby" class="hidden-section">
+                <h3 class="animated-text">Hobbies:-</h3>
+                <p class="animated-text"><strong>1:</strong>DATA ANALYSIS</p>
+                <p class="animated-text"><strong>2:</strong> WEB DEVELOPMENT</p>
+                <p class="animated-text"><strong>3:</strong> CODING</p>
+                <p class="animated-text"><strong>4:</strong> CRICKET</p>
+            
+
+
+            </div>
+            <script>
+            document.getElementById("toggle3-details").addEventListener("click", function(event) {
+                event.preventDefault();
+                const detailsSection = document.getElementById("Hobby");
+            
+                if (detailsSection.style.display === "none" || detailsSection.style.display === "") {
+                    // Show the section without scrolling
+                    detailsSection.style.display = "block";
+                    setTimeout(() => detailsSection.style.opacity = "1", 50);
+            
+                    // Change link text to "Hide Personal Details"
+                    this.textContent = "Hide Hobbies";
+                } else {
+                    // Hide the section
+                    detailsSection.style.opacity = "0";
+                    setTimeout(() => detailsSection.style.display = "none", 500); // Delay hiding for smooth fade-out
+            
+                    // Change link text back to "Personal Details"
+                    this.textContent = "Hobby";
+                }
+            });
+            </script>
+    </section>
+   
+
+
+<!-- certificate section -->
+
+    <div class="certificate-section">
+        <h2>My Certificates</h2>
+        <div id="certificates"></div>
+
+        <div class="certificate">
+            <img src="python.jpg" alt="Python Programming Certificate" class="certificate img">
+            <a href="python.jpg" target="_blank">PYTHON</a>
+        </div>
+
+        <div class="certificate">
+            <img src="powerbi.jpg" alt="Power-biProgramming Certificate" class="certificate img">
+            <a href="powerbi.jpg" target="_blank">POWER-BI</a>
+        </div>
+
+        <div class="certificate">
+            <img src="internship.jpg" alt="internship-Certificate" class="certificate img">
+            <a href="certificates/cert3.jpg" target="_blank">INTERSHIP</a>
+        </div>
+        <div class="certificate">
+            <img src="digital.jpg" alt="Digital-Certificate" class="certificate img">
+            <a href="digital.jpg" target="_blank">DIGITAL</a>
+        </div>
+        <div class="certificate">
+            <img src="dbpower.jpg" alt="Db-power Certificate" class="certificate img">
+            <a href="dbpower.jpg" target="_blank">DB-POWER</a>
+        </div>
+        <div class="certificate">
+            <img src="dataanalysis.jpg" alt="Data-analysis Certificate" class="certificate img">
+            <a href="dataanalysis.jpg" target="_blank">DATA-ANALYSIS</a>
+        </div>
+        <div class="certificate">
+            <img src="cyber.jpg" alt="Data-analysis Certificate" class="certificate img">
+            <a href="cyber.jpg" target="_blank">CYBER</a>
+        </div>
+        <div class="certificate">
+            <img src="financial security.jpg" alt="Data-analysis Certificate" class="certificate img">
+            <a href="financial security.jpg" target="_blank">FINANCIAL</a>
+        </div>
+    
+        
+        
+    
+
+    </div>
+    
+
+       
+       
+<!-- Contact Me Section -->
+<h2>Contact Me</h2>
+<div id="contact">
+<div class="social-container">
+    <div class="social-item">
+        <img src="emaillogo.jpeg" alt="EMAIL">
+        <p><a href="mailto:UMMERFAROOQSHAH@GMAIL.COM" target="_blank">EMAIL</a></p>
+    </div>
+    <div class="social-item">
+        <img src="whtaspplogo.jpeg" alt="WhatsApp">
+        <p><a href="https://wa.me/qr/WLLPYB7BRQUVE1" target="_blank">WHATSAPP</a></p>
+    </div></div>
+</div></div>
+
+  
+  
+    
+
+
+<!-- skills -->
+   <h2>Skills</h2>
+   <div id="skills">
+   <div class="social-container">
+   <div class="social-item">
+       <img src="pythonskill.jpg" alt="python">
+       <p><a href="" target="_blank">PYTHON</a></p>
+       
+   </div>
+   <div class="social-item">
+       <img src="power.jpg" alt="powerbi">
+       <p><a href="" target="_blank">POWER-BI</a></p>
+
+   </div>
+   <div class="social-item">
+       <img src="tabeleau.jpg" alt="tabeleau">
+       <p><a href="" target="_blank">TABELEAU</a></p>
+
+   </div>
+   <div class="social-item">
+       <img src="vcode.jpg" alt="vscode">
+       <p><a href="" target="_blank">VS-CODE</a></p>
+    </div>
+
+   <div class="social-item">
+       <img src="ppt.jpg" alt="powerpoint">
+       <p><a href="" target="_blank">POWERPOINT</a></p>
+
+   </div>
+   <div class="social-item">
+    <img src="word.jpg" alt="word">
+    <p><a href="" target="_blank">MS-WORD</a></p>
+
+</div>
+<div class="social-item">
+    <img src="excel.jpg" alt="EXCEL">
+    <p><a href="" target="_blank">MS-EXCEL</a></p>
+
+</div>
+<div class="social-item">
+    <img src="mysql.jpg" alt="sql">
+    <p><a href="" target="_blank">MYSQL</a></p>
+
+</div>
+</div>
+</div></div>
+
+
+
+
+   <!--FORM -->
+   <div class="form-wrapper" id="queryForm">
+    <div class="form-container">
+      <h2>QUERY:-</h2>
+      <form id="contactForm">
+        <input type="text" id="id" placeholder="Enter ID" required>
+        <input type="text" id="name" placeholder="Enter Name" required>
+        <input type="text" id="phone" placeholder="Enter Phone" required>
+        <input type="text" id="address" placeholder="Enter Address" required>
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <textarea id="user_query" placeholder="Enter Query" required></textarea>
+        <button type="submit">Submit</button>
+        <button type="button" id="closeForm">Close</button>
+      </form>
+      <p id="responseMessage"></p>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    document.getElementById("queryNav").addEventListener("click", function () {
+      const form = document.getElementById("queryForm");
+      form.style.display = "flex";
+      setTimeout(() => {
+        form.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    });
+
+    document.getElementById("closeForm").addEventListener("click", function () {
+      document.getElementById("queryForm").style.display = "none";
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let formData = {
+        id: document.getElementById("id").value,
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        address: document.getElementById("address").value,
+        email: document.getElementById("email").value,
+        query: document.getElementById("user_query").value
+      };
+
+      fetch("http://localhost:5000/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("responseMessage").innerText = data.message;
+          setTimeout(() => {
+            document.getElementById("queryForm").style.display = "none";
+          }, 1000);
+        })
+        .catch(error => {
+          document.getElementById("responseMessage").innerText = "Error";
+          setTimeout(() => {
+            document.getElementById("queryForm").style.display = "none";
+          }, 1000);
+          console.error("Error:", error);
+        });
+    });
+
+    // Random color animation on hover
+    const formContainer = document.querySelector(".form-container");
+    formContainer.addEventListener("mouseenter", function () {
+      let changeColor = setInterval(() => {
+        formContainer.style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+      }, 500);
+
+      formContainer.addEventListener("mouseleave", function () {
+        clearInterval(changeColor);
+        formContainer.style.backgroundColor = "white";
+      });
+    });
+  </script>
+
+
+<!-- projects -->
+<div id="projects">
+<h2>My Projects</h2>
+<div class="projects-container">
+    <div class="project">
+            <img src="ai.jpeg" alt="AI IMAGE CLASSIFIER">
+           <p><a href="https://github.com/UMMERFAROOQSHAH/AI-IMAGE-CLASSIFIER" target="_blank">AI IMAGE CLASSIFIER</a></p>
+        </a>
+    </div>
+    <div class="project">
+            <img src="tinkter.jpeg" alt="UMMTRACKER(TINKTER)">
+            <p> <a href="https://github.com/UMMERFAROOQSHAH/UMMtrackER" target="_blank">UMMTRACKER</a></p>
+        </a>
+    </div>
+    <div class="project">
+            <img src="data.jpeg" alt="DATA ANALYSIS">
+            <p> <a href="https://github.com/UMMERFAROOQSHAH/PORTFOLIO" target="_blank">DATA ANALYSIS</a></p>
+        </a>
+    </div>
+    </div>
+</div>
+
+
+
+<!-- social -->
+<h2>Social-Links</h2>
+        
+<div class="social-container">
+<div class="social-item">
+    <img src="whatsapp.jpg" alt="WhatsApp">
+    <p><a href="https://wa.me/qr/WLLPYB7BRQUVE1" target="_blank">WHATSAPP</a></p>
+</div>
+<div class="social-item">
+    <img src="fb.jpg" alt="Facebook">
+    <p><a href="https://www.facebook.com/suhe.umer" target="_blank">FACEBOOK</a></p>
+</div>
+<div class="social-item">
+    <img src="insta.jpg" alt="Instagram">
+    <p><a href="https://www.instagram.com/shah_ummer_farooq?igsh=MWJpNzZjdWk3bzdoOQ==" target="_blank">INSTAGRAM</a></p>
+</div>
+<div class="social-item">
+    <img src="snap.jpg" alt="Snapchat">
+    <p><a href="https://www.snapchat.com/add/suhee_ummer218?share_id=FO7aTgpWpvw&locale=en-GB" target="_blank">SNAPCHAT</a></p>
+</div>
+<div class="social-item">
+    <img src="linkeden.jpg" alt="LinkedIn">
+    <p><a href="https://www.linkedin.com/in/ummer-farooq-shah-5108b0217?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LINKEDEN</a></p>
+</div>
+</div></div>
+
+
+
+
+<!-- Footer Section -->
+   <!-- Footer Section -->
+<footer>
+    <p class="footer-text">&copy; 2025 <strong>UMMER FAROOQ SHAH</strong>. All Rights Reserved.</p>
+    <p class="footer-text">Developed By:- <strong><a href="https://github.com/UMMERFAROOQSHAH" target="_blank">UMMER FAROOQ SHAH</a></strong></p>
+</footer>
+</body>
+</html>
